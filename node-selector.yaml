@@ -1,0 +1,15 @@
+# First label the node using:
+# kubectl label nodes <node-name> <label-key>=<label-value>
+# 
+# kubectl label nodes node01 size=Large
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: poddie
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  nodeSelector:
+    size: Large
